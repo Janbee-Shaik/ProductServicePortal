@@ -38,13 +38,8 @@ public class ProductService {
 		return productsRepository.findAll();
 	}
 
-	public String update(ProductReqDto productReqDto) {
+	public String update(Product product) {
 		Product updatedProduct = null;
-		Product product = new Product();
-		product.setName(productReqDto.getName());
-		product.setPrice(productReqDto.getPrice());
-		product.setManfDate(productReqDto.getManfDate());
-		product.setExpDate(productReqDto.getExpDate());
 		updatedProduct = productsRepository.save(product);
 		if(updatedProduct != null) {
 			return Constants.PRODUCT_UPDATED;

@@ -52,8 +52,8 @@ public class ProductController {
 	
 	@ApiOperation(value = "Update a product")
 	@PutMapping("/{productId}")
-	public ResponseEntity<String> update(@PathVariable String productId, @RequestBody ProductReqDto productReqDto) {
-		String message = productService.update(productReqDto);
+	public ResponseEntity<String> update(@PathVariable String productId, @RequestBody Product product) {
+		String message = productService.update(product);
 		return new ResponseEntity<>(message, HttpStatus.OK);
 	}
 	
